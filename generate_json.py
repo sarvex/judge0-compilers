@@ -26,8 +26,7 @@ def parse_lang_properties(lang_properties):
     for version in versions:
         language = {}
         variables["VERSION"] = version
-        for key in variables:
-            resolved_value = variables[key]
+        for key, resolved_value in variables.items():
             for key2 in variables:
                 resolved_value = resolved_value.replace(f"${key2}", variables[key2])
             language[key] = resolved_value
